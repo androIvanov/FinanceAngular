@@ -3,6 +3,39 @@
 .root{
     display: flex;
     width: 100%;
+    margin-bottom: 10px;
+    position: relative;
+
+    &:hover{
+        .x-icon-button{
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    .x-icon-button{
+        position: absolute;
+        height: 30px;
+        width: 30px;
+        background: coral;
+        border-radius: 20px;
+        background-image: url('../../../assets/61391.svg');
+        background-size: 20px;
+        background-repeat: no-repeat;
+        background-position: center;
+        right: -13px;
+        top: -17px;
+        cursor: pointer;
+
+        transition: opacity 0.3s ease-out, transform 0.1s ease-out;
+
+        transform: scale(0);
+        opacity: 0;
+
+        &:hover{
+            transform: scale(1.7);
+        }
+    }
 }
 
 .budget-item{
@@ -13,10 +46,17 @@
     border-radius: 6px;
     cursor: pointer;
 
+    transition: background-color 0.2s ease-out ;
+    &:hover{
+        background-color: darken($light-grey, 10%);
+    }
+
     .description{
+        display: flex;
         flex-grow: 1;
         font-size: 18px;
         margin-left: 6px;
+        align-items: center;
     }
     .amount{
         padding: 5px;
