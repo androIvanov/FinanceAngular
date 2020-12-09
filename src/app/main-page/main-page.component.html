@@ -4,7 +4,7 @@
 
 <section class="total-budget-section">
     <app-clock></app-clock>
-    <h2 class="red">1500</h2>
+    <h2 [ngClass]="{'red': total < 0, 'green': total >= 0}">{{total}}</h2>
 </section>
 
 <section class="add-item-section">

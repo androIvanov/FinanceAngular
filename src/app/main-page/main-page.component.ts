@@ -10,6 +10,8 @@ export class MainPageComponent implements OnInit {
 
   budgetItems: BudgetItem[] = new Array<BudgetItem>();
 
+  total: number = 0;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -17,9 +19,11 @@ export class MainPageComponent implements OnInit {
 
   addItem(newItem: BudgetItem){
     this.budgetItems.push(newItem);
+    this.total += newItem.amount;
   }
   finalDelete(toBeGone: BudgetItem){
     let index = this.budgetItems.indexOf(toBeGone);
     this.budgetItems.splice(index, 1);
+    this.total -= toBeGone.amount;
   }
 }
