@@ -13,4 +13,4 @@
     </div>
 </section>
 <hr style="margin: 0;">
-<app-budget-item-list [budgetItems]="budgetItems"></app-budget-item-list>
+<app-budget-item-list (parentDelete)="finalDelete($event)" [budgetItems]="budgetItems"></app-budget-item-list>
